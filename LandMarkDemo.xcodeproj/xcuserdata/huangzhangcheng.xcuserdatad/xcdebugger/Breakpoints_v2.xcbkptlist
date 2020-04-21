@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8110945C-356E-4115-AC6A-ECCAA642640C"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D8AF39C-4873-4FAF-89B4-E17B1D49B943"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LandMarkDemo/LandmarkList.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "4D8AF39C-4873-4FAF-89B4-E17B1D49B943 - d9f53f593fb270dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (LandMarkDemo.Landmark) -&gt; Swift.Optional&lt;SwiftUI.NavigationLink&lt;LandMarkDemo.LandmarkRow, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.environmentObject&lt;A where A1: Combine.ObservableObject&gt;(A1) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Toggle&lt;SwiftUI.Text&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;LandMarkDemo.Landmark&gt;, Swift.Int, Swift.Optional&lt;SwiftUI.NavigationLink&lt;LandMarkDemo.LandmarkRow, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.environmentObject&lt;A where A1: Combine.ObservableObject&gt;(A1) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.navigationBarTitle(SwiftUI.Text) -&gt; some&gt;&gt;.0 in LandMarkDemo.LandmarkList.body.getter : some"
+                  moduleName = "LandMarkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ben/Desktop/LandMarkDemo/LandMarkDemo/LandmarkList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "849">
+               </Location>
+               <Location
+                  uuid = "4D8AF39C-4873-4FAF-89B4-E17B1D49B943 - ec85fd55d8968692"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; LandMarkDemo.LandmarkRow in closure #2 (LandMarkDemo.Landmark) -&gt; Swift.Optional&lt;SwiftUI.NavigationLink&lt;LandMarkDemo.LandmarkRow, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.environmentObject&lt;A where A1: Combine.ObservableObject&gt;(A1) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Toggle&lt;SwiftUI.Text&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;LandMarkDemo.Landmark&gt;, Swift.Int, Swift.Optional&lt;SwiftUI.NavigationLink&lt;LandMarkDemo.LandmarkRow, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.environmentObject&lt;A where A1: Combine.ObservableObject&gt;(A1) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.navigationBarTitle(SwiftUI.Text) -&gt; some&gt;&gt;.0 in LandMarkDemo.LandmarkList.body.getter : some"
+                  moduleName = "LandMarkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ben/Desktop/LandMarkDemo/LandMarkDemo/LandmarkList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
