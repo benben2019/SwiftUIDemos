@@ -25,6 +25,16 @@ struct Home: View {
         GridItem(.flexible(), spacing: 10),
         GridItem(.flexible(), spacing: 10)
     ]
+    
+    @State var languages: [Language] = [.init(id: 0, name: "Java"),
+                                        .init(id: 1, name: "Swift"),
+                                        .init(id: 2, name: "Javascript"),
+                                        .init(id: 3, name: "Go"),
+                                        .init(id: 4, name: "Objective-c"),
+                                        .init(id: 5, name: "C++")]
+    @State var selectedLanguages: [Language] = []
+    @Namespace var namespace
+    
     @State var messages: [Message] = [.init(id: 0, msg: "init")]
     @State var message: String = ""
     
@@ -53,6 +63,59 @@ struct Home: View {
 //            }
 //        }
 
+        // MARK: Grid2
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 15), count: 3),spacing: 15){
+                    ForEach(self.languages) { lan in
+                        Text(lan.name)
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .frame(width: 110, height: 110)
+                            .background(Color.purple.opacity(0.6))
+                            .cornerRadius(15)
+                            .matchedGeometryEffect(id: lan.id,in: self.namespace)
+                            .onTapGesture {
+                                self.selectedLanguages.append(lan)
+                                self.languages.removeAll { (l) -> Bool in
+                                    return l.id == lan.id
+                                }
+                            }
+                    }
+                }
+                .padding()
+                
+                HStack {
+                    Text("Selected Languages")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 15), count: 3),spacing: 15){
+                    ForEach(self.selectedLanguages) { lan in
+                        Text(lan.name)
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .frame(width: 110, height: 110)
+                            .background(Color.blue.opacity(0.6))
+                            .cornerRadius(15)
+                            .matchedGeometryEffect(id: lan.id,in: self.namespace)
+                            .onTapGesture {
+                                self.languages.append(lan)
+                                self.selectedLanguages.removeAll { (l) -> Bool in
+                                    return l.id == lan.id
+                                }
+                            }
+                    }
+                }
+                .padding()
+            }
+            .navigationTitle("Languages")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .animation(.easeIn)
         
         // MARK: ScrollView自动滚动到最后
 //        VStack {
@@ -183,43 +246,43 @@ struct Home: View {
 //        }
 
         // MARK: searchBar
-        VStack {
-            HStack(spacing: 15){
-                TextField("search", text: self.$query)
-                    .autocapitalization(.none)
-                    .onChange(of: self.query, perform: { inputValue in
-                        if inputValue.count == 0 {
-                            self.searchResults.removeAll()
-                            return
-                        }
-                        DispatchQueue.global(qos: .background).async {
-                            let r = self.results.filter{$0.lowercased().contains(inputValue.lowercased())}
-                            DispatchQueue.main.async {
-                                self.searchResults = r
-                            }
-                        }
-                    })
-                
-                if self.query.count > 0 {
-                    Button(action: {
-                        self.query = ""
-                    }, label: {
-                        Image(systemName: "xmark")
-                            .foregroundColor(.black)
-                    })
-                }
-         
-            }
-            .padding(.all)
-            .background(Color.gray.opacity(0.3))
-            .cornerRadius(15)
-            .padding([.horizontal,.top])
-            
-            List(self.searchResults,id: \.self) {result in
-                Text(result)
-            }
-            
-        }
+//        VStack {
+//            HStack(spacing: 15){
+//                TextField("search", text: self.$query)
+//                    .autocapitalization(.none)
+//                    .onChange(of: self.query, perform: { inputValue in
+//                        if inputValue.count == 0 {
+//                            self.searchResults.removeAll()
+//                            return
+//                        }
+//                        DispatchQueue.global(qos: .background).async {
+//                            let r = self.results.filter{$0.lowercased().contains(inputValue.lowercased())}
+//                            DispatchQueue.main.async {
+//                                self.searchResults = r
+//                            }
+//                        }
+//                    })
+//
+//                if self.query.count > 0 {
+//                    Button(action: {
+//                        self.query = ""
+//                    }, label: {
+//                        Image(systemName: "xmark")
+//                            .foregroundColor(.black)
+//                    })
+//                }
+//
+//            }
+//            .padding(.all)
+//            .background(Color.gray.opacity(0.3))
+//            .cornerRadius(15)
+//            .padding([.horizontal,.top])
+//
+//            List(self.searchResults,id: \.self) {result in
+//                Text(result)
+//            }
+//
+//        }
     }
 }
 
@@ -235,4 +298,9 @@ struct ContentView_Previews: PreviewProvider {
 struct Message: Identifiable {
     var id: Int
     var msg: String
+}
+
+struct Language: Identifiable {
+    var id: Int
+    var name: String
 }
